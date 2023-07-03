@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alternate Row Colors</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 5px;
+    }
+
+    .even {
+      background-color: red;
+    }
+
+    .odd {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <table id="myTable">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>25</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Jane</td>
+      <td>30</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Mark</td>
+      <td>28</td>
+      <td>Australia</td>
+    </tr>
+    <tr>
+      <td>Sarah</td>
+      <td>32</td>
+      <td>UK</td>
+    </tr>
+  </table>
+
+  <script>
+    const table = document.getElementById('myTable');
+    const rows = table.getElementsByTagName('tr');
+
+    // Loop through the rows starting from index 1 (excluding the header row)
+    for (let i = 1; i < rows.length; i++) {
+      if (i % 2 === 0) {
+        // Even row
+        rows[i].classList.add('even');
+      } else {
+        // Odd row
+        rows[i].classList.add('odd');
+      }
+    }
+  </script>
+</body>
+</html>
